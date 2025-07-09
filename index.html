@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Affan's Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom right, #ffe6e6, #e0f7f1);
+      color: #333;
+    }
+
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    .animate-typewriter {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #b388eb;
+      width: 100%;
+      animation: typewriter 4s steps(40) forwards;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 p-5 flex justify-between items-center bg-white bg-opacity-70 backdrop-blur-md z-50 shadow text-[#333]">
+    <div class="text-2xl font-bold">Affan</div>
+    <ul class="flex space-x-5 font-medium">
+      <li><a href="#about" class="hover:text-[#b388eb] transition">About</a></li>
+      <li><a href="#skills" class="hover:text-[#b388eb] transition">Skills</a></li>
+      <li><a href="#contact" class="hover:text-[#b388eb] transition">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="h-screen flex flex-col justify-center items-center text-center px-4">
+    <h1 class="text-5xl font-bold animate-typewriter text-gray-900">Welcome to My World</h1>
+    <p class="mt-4 text-lg text-gray-700">"Building digital empires from my bedroom."</p>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="h-screen flex flex-col justify-center items-center px-4 text-center">
+    <h2 class="text-4xl font-bold text-gray-900">About Me</h2>
+    <p class="mt-4 max-w-xl text-gray-700">I'm a passionate developer who brings minimalist design and smooth code together to build chill, aesthetic web experiences.</p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="h-screen flex flex-col justify-center items-center px-4 text-center">
+    <h2 class="text-4xl font-bold text-gray-900">Skills</h2>
+    <ul class="mt-4 space-y-2 text-gray-700">
+      <li class="hover:text-[#b388eb] transition">WEB DEVELOPMENT</li>
+      <li class="hover:text-[#b388eb] transition">APP DEVELOPMENT</li>
+      <li class="hover:text-[#b388eb] transition">LOGO DESIGN</li>
+      <li class="hover:text-[#b388eb] transition">TEMPLATES</li>
+      <li class="hover:text-[#b388eb] transition">DIGITAL ARTWORK</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="h-screen flex flex-col justify-center items-center px-4 text-center">
+    <h2 class="text-4xl font-bold text-gray-900">Contact</h2>
+    <p class="mt-4 text-gray-700">Let’s build something beautiful </p>
+
+    <form action="https://formspree.io/f/xrbkvbvw" method="POST" class="mt-4 space-y-3 w-full max-w-md">
+      <input type="text" name="name" placeholder="Your Name" class="w-full p-2 bg-white text-gray-800 border border-gray-300" required>
+      <input type="email" name="email" placeholder="Your Email" class="w-full p-2 bg-white text-gray-800 border border-gray-300" required>
+      <input type="text" name="phone" placeholder="Your Phone Number" class="w-full p-2 bg-white text-gray-800 border border-gray-300">
+      <textarea name="message" placeholder="Your Message" class="w-full p-2 bg-white text-gray-800 border border-gray-300" required></textarea>
+      <button type="submit" class="w-full p-2 bg-[#b388eb] text-white hover:bg-[#89cff0] transition">Send</button>
+    </form>
+
+    <div id="form-message" class="text-green-500 mt-3 hidden">Thanks! Your message has been sent.</div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="p-5 text-center text-[#555]">
+    <p class="mb-2">Connect with me 🌐</p>
+    <div class="flex justify-center space-x-5 mt-2">
+      <a href="https://instagram.com/revex.inc" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/30/555/instagram-new.png" alt="Instagram"/>
+      </a>
+      <a href="https://github.com/YOUR_GITHUB" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/30/555/github.png" alt="GitHub"/>
+      </a>
+      <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/30/555/linkedin.png" alt="LinkedIn"/>
+      </a>
+      <a href="https://twitter.com/YOUR_TWITTER" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/30/555/twitterx--v1.png" alt="Twitter"/>
+      </a>
+      <a href="https://youtube.com/@YOUR_YOUTUBE" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/30/555/youtube-play.png" alt="YouTube"/>
+      </a>
+      <a href="https://wa.me/9035374762" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/30/555/whatsapp.png" alt="WhatsApp"/>
+      </a>
+    </div>
+  </footer>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from("#hero h1", {
+      duration: 1.5,
+      y: -50,
+      opacity: 0,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "#hero",
+        start: "top center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    gsap.from("#about, #skills, #contact", {
+      duration: 1,
+      y: 50,
+      opacity: 0,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: "#about",
+        start: "top center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    const form = document.querySelector("form");
+    const message = document.getElementById("form-message");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" }
+      });
+
+      if (res.ok) {
+        form.reset();
+        message.classList.remove("hidden");
+      } else {
+        message.innerText = "Oops! Something went wrong.";
+        message.classList.remove("hidden");
+        message.classList.replace("text-green-500", "text-red-500");
+      }
+    });
+  </script>
+</body>
+</html>
