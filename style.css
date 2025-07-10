@@ -1,16 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+  height: 100vh;
+  background: #0f2027;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes typewriter {
-    from { width: 0; }
-    to { width: 100%; }
+canvas#particles {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.animate-typewriter {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid;
-    width: 100%;
-    animation: typewriter 4s steps(40) forwards;
+.container {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 800px;
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  resize: none;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.actions button {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  color: white;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.actions button:hover i {
+  transform: scale(1.3) rotate(10deg);
+  color: #00f5d4;
+  text-shadow: 0 0 5px #00f5d4;
+}
+.actions button {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background: #00f5d4;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00f5d4aa;
+}
+
+
+.test-section {
+  margin-top: 20px;
+}
+
+button {
+  background: #00f5d4;
+  border: none;
+  padding: 10px 20px;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#feedback {
+  margin-top: 10px;
+  color: #fff;
 }
